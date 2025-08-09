@@ -4,11 +4,15 @@ import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
 import { SHOP_DATA } from '../constants/shopData';
 
-const { FiClock, FiTool, FiCalendar, FiPhone, FiMail, FiMapPin } = FiIcons;
+// ⬇️ Importa el logo desde src/assets
+import logoLM from '../assets/logo-lira-motors.png';
+
+const { FiClock, FiTool, FiCalendar, FiPhone, FiMapPin } = FiIcons;
 
 function WelcomeScreen({ onStartBooking }) {
   return (
     <div className="min-h-screen flex flex-col justify-between px-4 py-8 bg-white">
+      
       {/* Header */}
       <motion.div 
         initial={{ opacity: 0, y: -20 }} 
@@ -25,7 +29,7 @@ function WelcomeScreen({ onStartBooking }) {
         >
           <div className="mx-auto mb-4 max-w-xs">
             <img
-              src="/assets/logo-lira-motors.png"
+              src={logoLM}
               alt="Logo Taller Lira Motors"
               className="w-full h-auto object-contain"
               onError={(e) => {
@@ -43,6 +47,7 @@ function WelcomeScreen({ onStartBooking }) {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col md:flex-row gap-8 max-w-6xl mx-auto w-full my-8">
+        
         {/* Left Side - Features */}
         <motion.div 
           initial={{ opacity: 0, x: -20 }} 
