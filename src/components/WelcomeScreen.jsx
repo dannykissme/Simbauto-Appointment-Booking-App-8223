@@ -1,3 +1,4 @@
+import logoLM from '../assets/logo-lira-motors.png';
 import React from 'react';
 import { motion } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
