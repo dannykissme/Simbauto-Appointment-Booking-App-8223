@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import WelcomeScreen from './components/WelcomeScreen';
 import BookingForm from './components/BookingForm';
 import ConfirmationScreen from './components/ConfirmationScreen';
+import './App.css';
 
 function App() {
   const [currentStep, setCurrentStep] = useState('welcome');
@@ -36,7 +37,6 @@ function App() {
             <WelcomeScreen onStartBooking={handleStartBooking} />
           </motion.div>
         )}
-
         {currentStep === 'form' && (
           <motion.div
             key="form"
@@ -48,7 +48,6 @@ function App() {
             <BookingForm onSubmit={handleFormSubmit} onBack={handleBackToWelcome} />
           </motion.div>
         )}
-
         {currentStep === 'confirmation' && (
           <motion.div
             key="confirmation"

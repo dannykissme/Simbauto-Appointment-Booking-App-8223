@@ -2,19 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #FF6D4D; /* Naranja coral para botones y acentos */
+  --accent: #FF6D4D; /* Igual que primary para coherencia */
+  --bg: #FFFFFF; /* Fondo blanco */
+  --card: #F8F8F8; /* Tarjetas gris claro */
+  --ink: #000000; /* Texto negro */
+  --muted: #6B7280; /* Texto gris */
+  --ring: rgba(255,109,77,.25); /* Sombra de foco */
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} 
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg);
+  color: var(--ink);
 }
 
 #root {
   width: 100%;
   height: 100%;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-primary-500 hover:bg-primary-600 text-white font-semibold py-4 px-8 rounded-xl shadow-lg transition-all duration-200;
+}
+
+.btn-secondary {
+  @apply bg-white hover:bg-gray-100 text-primary-500 border border-primary-500 font-semibold py-3 px-6 rounded-xl transition-all duration-200;
 }
