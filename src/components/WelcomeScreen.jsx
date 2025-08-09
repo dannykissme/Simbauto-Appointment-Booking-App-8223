@@ -21,36 +21,30 @@ function WelcomeScreen({ onStartBooking }) {
         className="text-center max-w-4xl mx-auto w-full"
       >
         {/* Logo */}
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mb-8"
-        >
-          <div className="w-28 h-28 mx-auto bg-gray-900 rounded-full flex items-center justify-center mb-4">
-            <img
-              src={LOGO_URL}
-              alt="Logo Taller Lira Motors"
-              className="w-20 h-20 object-contain"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = '';
-                e.target.parentNode.style.display = 'flex';
-                e.target.parentNode.style.alignItems = 'center';
-                e.target.parentNode.style.justifyContent = 'center';
-                e.target.parentNode.innerHTML =
-                  '<span class="text-white text-3xl">LM</span>';
-              }}
-            />
-          </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-1">
-            {SHOP_DATA.name}
-          </h1>
-          <div className="h-1 w-24 bg-primary-500 mx-auto rounded-full mb-4"></div>
-          <p className="text-xl text-gray-700">
-            Reserva tu cita en menos de un minuto
-          </p>
-        </motion.div>
+<motion.div 
+  initial={{ scale: 0.8, opacity: 0 }} 
+  animate={{ scale: 1, opacity: 1 }} 
+  transition={{ duration: 0.5, delay: 0.2 }}
+  className="mb-8"
+>
+  <div className="mx-auto mb-4 max-w-xs">
+    <img 
+      src="https://www.dropbox.com/scl/fi/hncm75fzqdi93489tdljr/logo-lira-motors.png?raw=1" 
+      alt="Logo Taller Lira Motors" 
+      className="w-full h-auto object-contain"
+      onError={(e) => {
+        e.target.onerror = null;
+        e.target.src = '';
+        e.target.parentNode.innerHTML = '<span class="text-gray-900 text-3xl font-bold">Lira Motors</span>';
+      }}
+    />
+  </div>
+  <h1 className="text-3xl font-bold text-gray-900 mb-1">{SHOP_DATA.name}</h1>
+  <div className="h-1 w-24 bg-primary-500 mx-auto rounded-full mb-4"></div>
+  <p className="text-xl text-gray-700">
+    Reserva tu cita en menos de un minuto
+  </p>
+</motion.div>
       </motion.div>
 
       {/* Main Content */}
