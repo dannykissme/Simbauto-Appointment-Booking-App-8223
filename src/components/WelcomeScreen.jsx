@@ -24,21 +24,25 @@ function WelcomeScreen({ onStartBooking }) {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mb-8"
         >
-          <div className="w-28 h-28 mx-auto bg-gray-900 rounded-full flex items-center justify-center mb-4">
-            <img 
-              src="/logo-lira-motors.png" 
-              alt="Logo Taller Lira Motors" 
-              className="w-20 h-20 object-contain"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = '';
-                e.target.parentNode.style.display = 'flex';
-                e.target.parentNode.style.alignItems = 'center';
-                e.target.parentNode.style.justifyContent = 'center';
-                e.target.parentNode.innerHTML = '<span class="text-white text-3xl">LM</span>';
-              }}
-            />
-          </div>
+          <div className="mb-8 text-center">
+  <div
+    className="w-32 h-32 mx-auto rounded-full flex items-center justify-center mb-4"
+    style={{ background:'#F3F4F6', border:'1px solid #e5e7eb' }}
+  >
+    <img
+      src={logoLM}
+      alt="Logo Taller Lira Motors"
+      className="max-w-[120px] max-h-[120px] object-contain"
+      onError={(e) => {
+        e.currentTarget.outerHTML = '<div style="font-weight:700;font-size:28px;color:#111">LM</div>';
+      }}
+    />
+  </div>
+
+  <h1 className="text-3xl font-bold text-gray-900 mb-1">{SHOP_DATA.name}</h1>
+  <div className="h-1 w-24 mx-auto rounded-full mb-4" style={{ background:'#FF6D4D' }} />
+  <p className="text-xl text-gray-700">Reserva tu cita en menos de un minuto</p>
+</div>
           <h1 className="text-3xl font-bold text-gray-900 mb-1">{SHOP_DATA.name}</h1>
           <div className="h-1 w-24 bg-primary-500 mx-auto rounded-full mb-4"></div>
           <p className="text-xl text-gray-700">
